@@ -4,11 +4,12 @@ using namespace std;
 
 void tabuleiro()
 {
-	cout<<"   |   |   "<<endl
+	char velha[9];
+	cout<<"  "<<velha[0]<<" | "<<velha[1]<<" | "<<velha[2]<<" "<<endl
 		<<"---+---+---"<<endl
-		<<"   |   |   "<<endl
+		<<"  "<<velha[3]<<" | "<<velha[4]<<" | "<<velha[5]<<" "<<endl
 		<<"---+---+---"<<endl
-		<<"   |   |   "<<endl;
+		<<"  "<<velha[6]<<" | "<<velha[7]<<" | "<<velha[8]<<" "<<endl;
 }
 
 int main()
