@@ -1,5 +1,16 @@
 #include <iostream>
 using namespace std;
+
+
+void tabuleiro()
+{
+	cout<<"   |   |   "<<endl
+		<<"---+---+---"<<endl
+		<<"   |   |   "<<endl
+		<<"---+---+---"<<endl
+		<<"   |   |   "<<endl;
+}
+
 int main()
 {
 	int opcao;
@@ -26,5 +37,8 @@ int main()
 		cout<<"Saindo"<<endl;
 		return(0);
 	}
+
+	//Início do jogo
+	tabuleiro();
 	return(0);
 }
