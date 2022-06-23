@@ -13,3 +13,11 @@ O X O
 X - -
 
 Marcaria uma vitória para o X. Os jogadores devem escolher seu símbolo no início da partida e logo depois que iniciar o jogo escolher a posição onde vão colocar seus símbolos.  O jogador elegerá um número de 1 a 9 de acordo com as posições mostradas pelo prompt. Ao final do jogo, é mostrado na tela qual jogador foi o vencedor, ou se aconteceu um empate.
+
+Para compilar o projeto é necessário o compilador gcc, utilizando o comando g++ (para c++). O comando deverá ser assim:
+
+g++ tictactoe.cpp -o <nome_do_executável>
+
+Para executar utilize o ./ como qualquer executável
+
+./<nome_do_executável>
