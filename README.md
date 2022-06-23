@@ -26,8 +26,8 @@ Marcaria uma vitória para o X. Os jogadores devem escolher seu símbolo no iní
 
 Para compilar o projeto é necessário o compilador gcc, utilizando o comando g++ (para c++). O comando deverá ser assim:
 
-g++ tictactoe.cpp -o <nome_do_executável>
+g++ tictactoe.cpp -o velha
 
 Para executar utilize o ./ como qualquer executável
 
-./<nome_do_executável>
+./velha
