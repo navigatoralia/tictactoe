@@ -2,14 +2,15 @@
 using namespace std;
 
 
-void tabuleiro()
+void tabuleiro(int position, char symbol)
 {
-	char velha[9];
-	cout<<"  "<<velha[0]<<" | "<<velha[1]<<" | "<<velha[2]<<" "<<endl
+	char velha[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+	velha[position] = symbol;
+	cout<<" "<<velha[0]<<" | "<<velha[1]<<" | "<<velha[2]<<" "<<endl
 		<<"---+---+---"<<endl
-		<<"  "<<velha[3]<<" | "<<velha[4]<<" | "<<velha[5]<<" "<<endl
+		<<" "<<velha[3]<<" | "<<velha[4]<<" | "<<velha[5]<<" "<<endl
 		<<"---+---+---"<<endl
-		<<"  "<<velha[6]<<" | "<<velha[7]<<" | "<<velha[8]<<" "<<endl;
+		<<" "<<velha[6]<<" | "<<velha[7]<<" | "<<velha[8]<<" "<<endl;
 }
 
 int main()
@@ -40,6 +41,5 @@ int main()
 	}
 
 	//Início do jogo
-	tabuleiro();
-	return(0);
+		tabuleiro(0, p1); //teste de conceito
 }
