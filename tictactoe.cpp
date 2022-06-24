@@ -1,4 +1,5 @@
 #include <iostream>
+#include <limits>
 using namespace std;
 
 
@@ -79,6 +80,26 @@ bool checarEstadoJogo(char velha_aux[],char play, int valida)
 
 }
 
+int pedirJogada()
+{
+    int posicao;
+    cout<<"Em que posição deseja jogar?"<<endl;
+    cin>>posicao;
+
+    // Garante que a entrada seja um número
+    while (cin.fail())
+    {
+        //Estas duas linhas limpam o cin para receber um dado novo.
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        // Pede a jogada de novo
+        cout<<"Jogada inválida. Tente novamente"<<endl;
+        cin>>posicao;
+    }
+
+    return posicao;
+}
+
 int main()
 {
 	int opcao, posicao, posValida;
@@ -116,14 +137,10 @@ int main()
 	while(fimJogo == false)
 	{
 
-	    cout<<"É a vez do jogador "<<playing<<endl;
-	    cout<<"As posições válidas para jogar são: ";
-
-	    imprimirPosicoes(velha);
-
-	    cout<<"Em que posição deseja jogar?"<<endl;
-	    cin>>posicao;
-
+        cout<<"É a vez do jogador "<<playing<<endl;
+        cout<<"As posições válidas para jogar são: ";
+        imprimirPosicoes(velha);
+        posicao = pedirJogada();
 	    velha[posicao-1] = playing;
 	    posValida--;
 	    imprimirTabuleiro(velha);
