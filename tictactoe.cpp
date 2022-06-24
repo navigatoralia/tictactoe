@@ -24,7 +24,7 @@ void imprimirPosicoes(char velha_aux[])
 	cout<<endl;
 }
 
-void checarEstadoJogo(char velha_aux[],char play)
+void checarEstadoJogo(char velha_aux[],char play, int valida)
 {
 	if(velha_aux[0] == play and velha_aux[1] == play and velha_aux[2] == play)
 	{
@@ -58,6 +58,10 @@ void checarEstadoJogo(char velha_aux[],char play)
 	{
 		cout<<"O vencedor é o jogador "<<play;
 	}
+	else if (valida == 0)
+	{
+		cout<<"empate";
+	}
 	else
 	{
 		cout<<"Segue o jogo";
@@ -66,9 +70,10 @@ void checarEstadoJogo(char velha_aux[],char play)
 
 int main()
 {
-	int opcao, posicao;
+	int opcao, posicao, posValida;
 	char p1, p2, playing;
 	char velha[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
+	posValida = 9;
 	cout<<"# Jogo da velha #"<<endl
 		<<"Para jogar, aperte 1 para X e 2 para O."<<endl
 		<<"Para sair, aperte 0"<<endl;
@@ -102,6 +107,7 @@ int main()
     cout<<"Em que posição deseja jogar?"<<endl;
     cin>>posicao;
     velha[posicao-1] = playing;
+    posValida--;
     imprimirTabuleiro(velha);
 
     if(playing == p1) 
@@ -109,5 +115,5 @@ int main()
     else 
         playing = p1;
 	playing = p1;
-    checarEstadoJogo(velha, playing);
+    checarEstadoJogo(velha, playing, posValida);
 }
