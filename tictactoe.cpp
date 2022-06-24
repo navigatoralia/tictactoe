@@ -18,10 +18,50 @@ void imprimirPosicoes(char velha_aux[])
 	{
 		if (velha_aux[i] == ' ')
 		{
-				cout<<i+1<<" ";
+			cout<<i+1<<" ";
 		}
 	}
 	cout<<endl;
+}
+
+void checarEstadoJogo(char velha_aux[],char play)
+{
+	if(velha_aux[0] == play and velha_aux[1] == play and velha_aux[2] == play)
+	{
+		cout<<"O vencedor é o jogador "<<play;
+	}
+	else if (velha_aux[3] == play and velha_aux[4] == play and velha_aux[5] == play)
+	{
+		cout<<"O vencedor é o jogador "<<play;
+	}
+	else if (velha_aux[6] == play and velha_aux[7] == play and velha_aux[8] == play)
+	{
+		cout<<"O vencedor é o jogador "<<play;
+	}
+	else if (velha_aux[0] == play and velha_aux[4] == play and velha_aux[8] == play)
+	{
+		cout<<"O vencedor é o jogador "<<play;
+	}
+	else if (velha_aux[6] == play and velha_aux[4] == play and velha_aux[2] == play)
+	{
+		cout<<"O vencedor é o jogador "<<play;
+	}
+	else if (velha_aux[0] == play and velha_aux[3] == play and velha_aux[6] == play)
+	{
+		cout<<"O vencedor é o jogador "<<play;
+	}
+	else if (velha_aux[1] == play and velha_aux[4] == play and velha_aux[7] == play)
+	{
+		cout<<"O vencedor é o jogador "<<play;
+	}
+	else if (velha_aux[2] == play and velha_aux[5] == play and velha_aux[8] == play)
+	{
+		cout<<"O vencedor é o jogador "<<play;
+	}
+	else
+	{
+		cout<<"Segue o jogo";
+	}
 }
 
 int main()
@@ -68,5 +108,6 @@ int main()
         playing = p2;
     else 
         playing = p1;
-
+	playing = p1;
+    checarEstadoJogo(velha, playing);
 }
