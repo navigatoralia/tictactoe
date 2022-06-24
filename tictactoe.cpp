@@ -26,13 +26,14 @@ void imprimirPosicoes(char velha_aux[])
 
 int main()
 {
-	int opcao, posicao, valida;
+	int opcao, posicao;
 	char p1, p2, playing;
 	char velha[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 	cout<<"# Jogo da velha #"<<endl
 		<<"Para jogar, aperte 1 para X e 2 para O."<<endl
 		<<"Para sair, aperte 0"<<endl;
 	cin>>opcao;
+
 	switch(opcao)
 	{
 		case 1:
@@ -51,24 +52,21 @@ int main()
 		cout<<"Saindo"<<endl;
 		return(0);
 	}
-	valida = 9;
+
 	//Início do jogo
-		imprimirTabuleiro(velha);
-		playing = p1;
-		cout<<"É a vez do jogador "<<playing<<endl;
-		cout<<"As posições válidas para jogar são: ";
-		imprimirPosicoes(velha);
-		cout<<"Em que posição deseja jogar?"<<endl;
-		cin>>posicao;
-		velha[posicao-1] = playing;
-		imprimirTabuleiro(velha);
-		if(playing == p1) 
-		{
-			playing = p2;
-		}
-		else
-		{
-			playing = p1;
-		}
+    imprimirTabuleiro(velha);
+    playing = p1;
+    cout<<"É a vez do jogador "<<playing<<endl;
+    cout<<"As posições válidas para jogar são: ";
+    imprimirPosicoes(velha);
+    cout<<"Em que posição deseja jogar?"<<endl;
+    cin>>posicao;
+    velha[posicao-1] = playing;
+    imprimirTabuleiro(velha);
+
+    if(playing == p1) 
+        playing = p2;
+    else 
+        playing = p1;
 
 }
