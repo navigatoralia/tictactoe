@@ -25,46 +25,46 @@ void imprimirPosicoes(char velha_aux[])
 	cout<<endl;
 }
 
-bool checarEstadoJogo(char velha_aux[],char jogada, int valida)
+bool checarEstadoJogo(char velha_aux[],char play, int valida)
 {
-	if(velha_aux[0] == jogada and velha_aux[1] == jogada and velha_aux[2] == jogada)
+	if(velha_aux[0] == play and velha_aux[1] == play and velha_aux[2] == play)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		cout<<"O vencedor é o jogador "<<play;
 		return true;
 	}
-	else if (velha_aux[3] == jogada and velha_aux[4] == jogada and velha_aux[5] == jogada)
+	else if (velha_aux[3] == play and velha_aux[4] == play and velha_aux[5] == play)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		cout<<"O vencedor é o jogador "<<play;
 		return true;
 	}
-	else if (velha_aux[6] == jogada and velha_aux[7] == jogada and velha_aux[8] == jogada)
+	else if (velha_aux[6] == play and velha_aux[7] == play and velha_aux[8] == play)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		cout<<"O vencedor é o jogador "<<play;
 		return true;
 	}
-	else if (velha_aux[0] == jogada and velha_aux[4] == jogada and velha_aux[8] == jogada)
+	else if (velha_aux[0] == play and velha_aux[4] == play and velha_aux[8] == play)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		cout<<"O vencedor é o jogador "<<play;
 		return true;
 	}
-	else if (velha_aux[6] == jogada and velha_aux[4] == jogada and velha_aux[2] == jogada)
+	else if (velha_aux[6] == play and velha_aux[4] == play and velha_aux[2] == play)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		cout<<"O vencedor é o jogador "<<play;
 		return true;
 	}
-	else if (velha_aux[0] == jogada and velha_aux[3] == jogada and velha_aux[6] == jogada)
+	else if (velha_aux[0] == play and velha_aux[3] == play and velha_aux[6] == play)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		cout<<"O vencedor é o jogador "<<play;
 		return true;
 	}
-	else if (velha_aux[1] == jogada and velha_aux[4] == jogada and velha_aux[7] == jogada)
+	else if (velha_aux[1] == play and velha_aux[4] == play and velha_aux[7] == play)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		cout<<"O vencedor é o jogador "<<play;
 		return true;
 	}
-	else if (velha_aux[2] == jogada and velha_aux[5] == jogada and velha_aux[8] == jogada)
+	else if (velha_aux[2] == play and velha_aux[5] == play and velha_aux[8] == play)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		cout<<"O vencedor é o jogador "<<play;
 		return true;
 	}
 	else if (valida == 0)
@@ -103,7 +103,7 @@ int pedirJogada()
 int main()
 {
 	int opcao, posicao, posValida;
-	char j1, j2, vezJogador;
+	char p1, p2, playing;
 	char velha[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 	bool fimJogo = false;
 	posValida = 9;
@@ -115,15 +115,15 @@ int main()
 	switch(opcao)
 	{
 		case 1:
-		j1 = 'X';
-		j2 = 'O';
-		cout<<"Você escolheu o "<<j1<<". Seu oponente ficará com o "<<j2<<endl;
+		p1 = 'X';
+		p2 = 'O';
+		cout<<"Você escolheu o "<<p1<<". Seu oponente ficará com o "<<p2<<endl;
 		break;
 
 		case 2:
-		j1 = 'O';
-		j2 = 'X';
-		cout<<"Você escolheu o "<<j1<<". Seu oponente ficará com o "<<j2<<endl;
+		p1 = 'O';
+		p2 = 'X';
+		cout<<"Você escolheu o "<<p1<<". Seu oponente ficará com o "<<p2<<endl;
 		break;
 
 		default:
@@ -132,23 +132,23 @@ int main()
 	}
 
 	//Início do jogo
-	vezJogador = j1;
+	playing = p1;
 	imprimirTabuleiro(velha);
 	while(fimJogo == false)
 	{
 
-        cout<<"É a vez do jogador "<<vezJogador<<endl;
+        cout<<"É a vez do jogador "<<playing<<endl;
         cout<<"As posições válidas para jogar são: ";
         imprimirPosicoes(velha);
         posicao = pedirJogada();
-	    velha[posicao-1] = vezJogador;
+	    velha[posicao-1] = playing;
 	    posValida--;
 	    imprimirTabuleiro(velha);
-	    fimJogo = checarEstadoJogo(velha, vezJogador, posValida);
+	    fimJogo = checarEstadoJogo(velha, playing, posValida);
 
-	    if(vezJogador == j1) 
-	        vezJogador = j2;
+	    if(playing == p1) 
+	        playing = p2;
 	    else 
-	        vezJogador = j1;
+	        playing = p1;
 	}
 }
