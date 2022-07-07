@@ -100,7 +100,7 @@ int pedirJogada()
     return posicao;
 }
 
-int main()
+int jogar()
 {
 	int opcao, posicao, posValida;
 	char j1, j2, vezJogador;

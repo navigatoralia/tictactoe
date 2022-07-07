@@ -3,6 +3,10 @@
 
 class ClaseTeste
 {
+public:
+    int numerito;
+
+    void metodoCumprimentar();
     
 };
 
