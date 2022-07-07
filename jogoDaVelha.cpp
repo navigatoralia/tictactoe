@@ -1,10 +1,8 @@
-#include <iostream>
 #include "jogoDaVelha.h"
 
-using namespace std;
 
 //Método responsável por imprimir o estado do tabuleiro na tela para o usuário
-void jogoDaVelha::imprimirTabuleiro (char velha_aux[])
+void JogoDaVelha::imprimirTabuleiro (char velha_aux[])
 {
 	cout<<" "<<velha_aux[0]<<" | "<<velha_aux[1]<<" | "<<velha_aux[2]<<" "<<endl
 		<<"---+---+---"<<endl
@@ -14,7 +12,7 @@ void jogoDaVelha::imprimirTabuleiro (char velha_aux[])
 }
 
 //Método responsável por imprimir as posições válidas (não jogadas) para o usuário
-void jogoDaVelha::imprimirPosicoes(char velha_aux[])
+void JogoDaVelha::imprimirPosicoes(char velha_aux[])
 {
 	for (int i=0; i<9; i++)
 	{
@@ -27,7 +25,7 @@ void jogoDaVelha::imprimirPosicoes(char velha_aux[])
 }
 
 //Método para checar o estado do jogo. Tá horrível e grande, Yanderedev-like, deve ter uma maneira de melhorar isso
-bool jogoDaVelha::checarEstadoJogo(char velha_aux[],char jogada, int valida)
+bool JogoDaVelha::checarEstadoJogo(char velha_aux[],char jogada, int valida)
 {
 	if(velha_aux[0] == jogada and velha_aux[1] == jogada and velha_aux[2] == jogada)
 	{
@@ -83,7 +81,7 @@ bool jogoDaVelha::checarEstadoJogo(char velha_aux[],char jogada, int valida)
 }
 
 //Método que chama o jogador a fazer uma jogada
-int jogoDaVelha::pedirJogada()
+int JogoDaVelha::pedirJogada()
 {
     int posicao;
     cout<<"Em que posição deseja jogar?"<<endl;
@@ -104,7 +102,7 @@ int jogoDaVelha::pedirJogada()
 }
 
 //Método principal do jogo, onde tudo acontece
-void jogoDaVelha::iniciarJogo()
+void JogoDaVelha::iniciarJogo()
 {
 	int opcao, posicao, posValida;
 	char j1, j2, vezJogador;
