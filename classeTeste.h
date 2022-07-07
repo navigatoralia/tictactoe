@@ -1,12 +1,21 @@
 #ifndef CLASSETESTE_H
 #define CLASSETESTE_H
 
-class ClaseTeste
+#include <iostream>
+
+using namespace std;
+
+class ClasseTeste
 {
 public:
     int numerito;
 
     void metodoCumprimentar();
+
+    void falaTchau()
+    {
+        cout<<"Tchau"<<endl;
+    };
     
 };
 

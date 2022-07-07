@@ -5,6 +5,10 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    cout<<"xoxo"<<endl;
+    ClasseTeste* objetoTeste = new ClasseTeste();
+
+    objetoTeste -> metodoCumprimentar();
+    objetoTeste -> falaTchau();
+
     return 0;
 }
