@@ -1,1 +1,2 @@
-velha
+# O arquivo Makefile depende da instalação de qt
+Makefile
