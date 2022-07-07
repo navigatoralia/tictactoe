@@ -1,11 +1,15 @@
 #include <iostream>
 #include <limits>
+#include <QtGui>
+#include <QApplication>
+#include <QLabel>
+#include <QTextStream>
 using namespace std;
 
 
 void imprimirTabuleiro(char velha_aux[])
 {
-	cout<<" "<<velha_aux[0]<<" | "<<velha_aux[1]<<" | "<<velha_aux[2]<<" "<<endl
+	QTextStream(stdout)<<" "<<velha_aux[0]<<" | "<<velha_aux[1]<<" | "<<velha_aux[2]<<" "<<endl
 		<<"---+---+---"<<endl
 		<<" "<<velha_aux[3]<<" | "<<velha_aux[4]<<" | "<<velha_aux[5]<<" "<<endl
 		<<"---+---+---"<<endl
@@ -19,62 +23,62 @@ void imprimirPosicoes(char velha_aux[])
 	{
 		if (velha_aux[i] == ' ')
 		{
-			cout<<i+1<<" ";
+			QTextStream(stdout)<<i+1<<" ";
 		}
 	}
-	cout<<endl;
+	QTextStream(stdout)<<endl;
 }
 
 bool checarEstadoJogo(char velha_aux[],char jogada, int valida)
 {
 	if(velha_aux[0] == jogada and velha_aux[1] == jogada and velha_aux[2] == jogada)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		QTextStream(stdout)<<"O vencedor é o jogador "<<jogada;
 		return true;
 	}
 	else if (velha_aux[3] == jogada and velha_aux[4] == jogada and velha_aux[5] == jogada)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		QTextStream(stdout)<<"O vencedor é o jogador "<<jogada;
 		return true;
 	}
 	else if (velha_aux[6] == jogada and velha_aux[7] == jogada and velha_aux[8] == jogada)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		QTextStream(stdout)<<"O vencedor é o jogador "<<jogada;
 		return true;
 	}
 	else if (velha_aux[0] == jogada and velha_aux[4] == jogada and velha_aux[8] == jogada)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		QTextStream(stdout)<<"O vencedor é o jogador "<<jogada;
 		return true;
 	}
 	else if (velha_aux[6] == jogada and velha_aux[4] == jogada and velha_aux[2] == jogada)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		QTextStream(stdout)<<"O vencedor é o jogador "<<jogada;
 		return true;
 	}
 	else if (velha_aux[0] == jogada and velha_aux[3] == jogada and velha_aux[6] == jogada)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		QTextStream(stdout)<<"O vencedor é o jogador "<<jogada;
 		return true;
 	}
 	else if (velha_aux[1] == jogada and velha_aux[4] == jogada and velha_aux[7] == jogada)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		QTextStream(stdout)<<"O vencedor é o jogador "<<jogada;
 		return true;
 	}
 	else if (velha_aux[2] == jogada and velha_aux[5] == jogada and velha_aux[8] == jogada)
 	{
-		cout<<"O vencedor é o jogador "<<jogada;
+		QTextStream(stdout)<<"O vencedor é o jogador "<<jogada;
 		return true;
 	}
 	else if (valida == 0)
 	{
-		cout<<"Empate";
+		QTextStream(stdout)<<"Empate";
 		return true;
 	}
 	else
 	{
-		cout<<"Segue o jogo"<<endl;
+		QTextStream(stdout)<<"Segue o jogo"<<endl;
 		return false;
 	}
 
@@ -83,7 +87,7 @@ bool checarEstadoJogo(char velha_aux[],char jogada, int valida)
 int pedirJogada()
 {
     int posicao;
-    cout<<"Em que posição deseja jogar?"<<endl;
+    QTextStream(stdout)<<"Em que posição deseja jogar?"<<endl;
     cin>>posicao;
 
     // Garante que a entrada seja um número
@@ -93,7 +97,7 @@ int pedirJogada()
         cin.clear();
         cin.ignore(numeric_limits<streamsize>::max(), '\n');
         // Pede a jogada de novo
-        cout<<"Jogada inválida. Tente novamente"<<endl;
+        QTextStream(stdout)<<"Jogada inválida. Tente novamente"<<endl;
         cin>>posicao;
     }
 
@@ -107,7 +111,7 @@ int main()
 	char velha[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
 	bool fimJogo = false;
 	posValida = 9;
-	cout<<"# Jogo da velha #"<<endl
+	QTextStream(stdout)<<"# Jogo da velha #"<<endl
 		<<"Para jogar, aperte 1 para X e 2 para O."<<endl
 		<<"Para sair, aperte 0"<<endl;
 	cin>>opcao;
@@ -117,17 +121,17 @@ int main()
 		case 1:
 		j1 = 'X';
 		j2 = 'O';
-		cout<<"Você escolheu o "<<j1<<". Seu oponente ficará com o "<<j2<<endl;
+		QTextStream(stdout)<<"Você escolheu o "<<j1<<". Seu oponente ficará com o "<<j2<<endl;
 		break;
 
 		case 2:
 		j1 = 'O';
 		j2 = 'X';
-		cout<<"Você escolheu o "<<j1<<". Seu oponente ficará com o "<<j2<<endl;
+		QTextStream(stdout)<<"Você escolheu o "<<j1<<". Seu oponente ficará com o "<<j2<<endl;
 		break;
 
 		default:
-		cout<<"Saindo"<<endl;
+		QTextStream(stdout)<<"Saindo"<<endl;
 		return(0);
 	}
 
@@ -137,8 +141,8 @@ int main()
 	while(fimJogo == false)
 	{
 
-        cout<<"É a vez do jogador "<<vezJogador<<endl;
-        cout<<"As posições válidas para jogar são: ";
+        QTextStream(stdout)<<"É a vez do jogador "<<vezJogador<<endl;
+        QTextStream(stdout)<<"As posições válidas para jogar são: ";
         imprimirPosicoes(velha);
         posicao = pedirJogada();
 	    velha[posicao-1] = vezJogador;
