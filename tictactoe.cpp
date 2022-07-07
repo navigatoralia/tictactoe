@@ -100,7 +100,7 @@ int pedirJogada()
     return posicao;
 }
 
-int jogar()
+void jogar()
 {
 	int opcao, posicao, posValida;
 	char j1, j2, vezJogador;
@@ -128,7 +128,7 @@ int jogar()
 
 		default:
 		cout<<"Saindo"<<endl;
-		return(0);
+		return;
 	}
 
 	//Início do jogo

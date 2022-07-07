@@ -11,11 +11,7 @@ public:
     int numerito;
 
     void metodoCumprimentar();
-
-    void falaTchau()
-    {
-        cout<<"Tchau"<<endl;
-    };
+    void falaTchau();
     
 };
 
