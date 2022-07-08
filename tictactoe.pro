@@ -14,5 +14,7 @@ INCLUDEPATH += .
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 # Input
-HEADERS += jogoDaVelha.h
-SOURCES += jogoDaVelha.cpp main.cpp tictactoe.cpp
+HEADERS += jogoDaVelha.h GUITabuleiro.h
+SOURCES += jogoDaVelha.cpp main.cpp tictactoe.cpp GUITabuleiro.cpp
+
+QT += core gui widgets

@@ -1,14 +1,12 @@
 #include <iostream>
-#include "jogoDaVelha.cpp"
-
-using namespace std;
+#include <QApplication>
+#include "jogoDaVelha.h"
+#include "GUITabuleiro.h"
 
 int main(int argc, char *argv[])
 {
-
-    JogoDaVelha novoJogo = JogoDaVelha();
-
-    novoJogo.iniciarJogo();
-
-    return 0;
+    QApplication app(argc, argv);
+    GUITabuleiro tabuleiro;
+    tabuleiro.show();
+    return app.exec();
 }
