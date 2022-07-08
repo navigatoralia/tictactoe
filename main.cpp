@@ -1,20 +1,14 @@
 #include <iostream>
-#include "classeTeste.cpp"
+#include "jogoDaVelha.cpp"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
-    ClasseTeste* objetoTeste = new ClasseTeste();
 
-    objetoTeste->metodoCumprimentar();
-    objetoTeste->falaTchau();
+    JogoDaVelha novoJogo = JogoDaVelha();
 
-
-    ClasseTeste objetoEstatico = ClasseTeste();
-
-    objetoEstatico.metodoCumprimentar();
-    objetoEstatico.falaTchau();
+    novoJogo.iniciarJogo();
 
     return 0;
 }
