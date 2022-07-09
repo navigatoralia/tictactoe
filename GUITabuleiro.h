@@ -2,6 +2,9 @@
 #define GUITABULEIRO_H
 
 #include <QMainWindow>
+#include <QGridLayout>
+#include <QPushButton>
+
 
 class GUITabuleiro : public QMainWindow
 {
